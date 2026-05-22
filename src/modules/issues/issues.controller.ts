@@ -130,11 +130,19 @@ export class IssuesController {
                 res.error('Invalid issue ID', 400);
                 return;
             }
-            const deleted = await IssuesService.deleteIssue(id);
-            if (!deleted) {
+
+            const issue = await IssuesService.getIssueById(id);
+            if (!issue) {
                 res.error('Issue not found', 404);
                 return;
             }
+
+            if (issue.reporter?.id !== req.user!.id) {
+                res.error('Forbidden: You can only delete your own issues', 403);
+                return;
+            }
+
+            const deleted = await IssuesService.deleteIssue(id);
             res.success(deleted, 'Issue deleted successfully');
         } catch (error) {
             console.error('Failed to delete issue', error);

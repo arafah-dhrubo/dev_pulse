@@ -8,13 +8,9 @@ const router = Router();
 router.use(authenticateUser);
 
 router.get("/", IssuesController.getAllIssues);
-
 router.get("/:id", IssuesController.issueDetail);
-
 router.post("/", IssuesController.createIssue);
-
 router.patch("/:id", IssuesController.updateIssue);
-
-router.delete("/:id", requireRole("maintainer"), IssuesController.deleteIssue);
+router.delete("/:id", IssuesController.deleteIssue);
 
 export default router;
