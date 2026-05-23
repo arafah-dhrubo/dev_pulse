@@ -1,7 +1,7 @@
 import { AccountModel } from "./account.model";
 import jwt from 'jsonwebtoken';
 import bcrypt from "bcrypt";
-import { SignupDto, SignupResult } from "@/modules/account/account.types";
+import { SignupDto, SignupResult } from "./account.types";
 
 export class AccountService {
 

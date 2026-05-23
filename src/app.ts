@@ -1,6 +1,6 @@
 import express, { Application, Request, Response } from 'express';
-import accountRoutes from "@/modules/account/account.route";
-import issuesRoutes from "@/modules/issues/issues.route";
+import accountRoutes from "./modules/account/account.route";
+import issuesRoutes from "./modules/issues/issues.route";
 import { responseHandler } from './middlewares/response.middleware';
 const app: Application = express();
 

@@ -1,4 +1,4 @@
-import { pool } from "@/config/db";
+import { pool } from "../../config/db";
 import { IssueData, IssueQueryParams } from "./issues.types";
 
 export class IssuesModel {
