@@ -4,7 +4,7 @@ dotenv.config();
 
 import app from "./app";
 import { connectDB } from "./config/db";
+const HOST = '0.0.0.0';
+const PORT = parseInt(process.env.PORT || '3000', 10);
 
-const PORT = process.env.PORT || 3000;
-
-connectDB().then(() => app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))).catch((error) => console.log(error.message))
+connectDB().then(() => app.listen({port: PORT, host: HOST}, () => console.log(`Server is running on port ${PORT}`))).catch((error) => console.log(error.message))
