@@ -1,4 +1,4 @@
-import {pool} from '@/config/db'
+import {pool} from '../../config/db'
 import { SignupDto } from './account.types';
 
 export class AccountModel {
