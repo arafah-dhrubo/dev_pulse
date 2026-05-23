@@ -1,7 +1,5 @@
 # Dev Pulse
 
-> **Live URL:** [Insert Live URL Here]
-
 Dev Pulse is a robust, role-based issue tracking API designed to handle bug reports and feature requests efficiently. It enforces strict access controls, data validation, and uses raw SQL to ensure maximum database performance without the overhead of ORMs.
 
 ## 🚀 Features
