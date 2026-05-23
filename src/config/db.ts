@@ -12,6 +12,10 @@ export const pool = new Pool({
     connectionTimeoutMillis: 10000,
 })
 
+pool.on('error', (err, client) => {
+    console.error('Unexpected error on idle client', err)
+})
+
 export const connectDB = async () => {
     try {
         const client = await pool.connect();
